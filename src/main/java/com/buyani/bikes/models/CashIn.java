@@ -19,7 +19,19 @@ public class CashIn {
     private LocalDate date;
     private boolean late;
     private  double amount;
-    
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "rider_id")
+    private Rider rider;
+
+    public Rider getRider() {
+        return rider;
+    }
+
+    public void setRider(Rider rider) {
+        this.rider = rider;
+    }
+
     public  CashIn(){}
     public CashIn(LocalDate date, boolean late, double amount) {
         this.date = date;

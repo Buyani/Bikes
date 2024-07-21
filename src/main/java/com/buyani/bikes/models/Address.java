@@ -12,12 +12,24 @@ public class Address {
             allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE,
             generator = "address_sequence")
-    
+
     private Long id;
     private String streetName;
     private String cityName;
     private int streetNumber;
-    
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "rider_id")
+    private Rider rider;
+
+    public Rider getRider() {
+        return rider;
+    }
+
+    public void setRider(Rider rider) {
+        this.rider = rider;
+    }
+
     public Address(){}
     public Address(String streetName, String cityName, int streetNumber) {
         this.streetName = streetName;

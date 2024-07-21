@@ -19,7 +19,19 @@ public class Bike {
     private String make ;
     private String plateNumber ;
     private int kilometers;
-    
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "rider_id")
+    private Rider rider;
+
+    public Rider getRider() {
+        return rider;
+    }
+
+    public void setRider(Rider rider) {
+        this.rider = rider;
+    }
+
     public  Bike(){}
 
     public Bike(Long id,String make, String plateNumber, int kilometers) {

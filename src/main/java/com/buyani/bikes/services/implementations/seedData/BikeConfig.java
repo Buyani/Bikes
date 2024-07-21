@@ -1,4 +1,4 @@
-package com.buyani.bikes.services.implementations;
+package com.buyani.bikes.services.implementations.seedData;
 
 import com.buyani.bikes.models.Bike;
 import com.buyani.bikes.repositories.IBikeRepository;

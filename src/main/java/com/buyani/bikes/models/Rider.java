@@ -2,7 +2,9 @@ package com.buyani.bikes.models;
 
 import jakarta.persistence.*;
 
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table
@@ -18,7 +20,40 @@ public class Rider {
     private String name;
     private String lastName;
     private String  idNumber;
-    
+
+    @OneToMany(mappedBy = "rider")
+    private Set<Address> addresses = new LinkedHashSet<>();
+
+    @OneToMany(mappedBy = "rider")
+    private Set<Bike> bikes = new LinkedHashSet<>();
+
+    @OneToMany(mappedBy = "rider")
+    private Set<CashIn> cashIns = new LinkedHashSet<>();
+
+    public Set<CashIn> getCashIns() {
+        return cashIns;
+    }
+
+    public void setCashIns(Set<CashIn> cashIns) {
+        this.cashIns = cashIns;
+    }
+
+    public Set<Bike> getBikes() {
+        return bikes;
+    }
+
+    public void setBikes(Set<Bike> bikes) {
+        this.bikes = bikes;
+    }
+
+    public Set<Address> getAddresses() {
+        return addresses;
+    }
+
+    public void setAddresses(Set<Address> addresses) {
+        this.addresses = addresses;
+    }
+
     public  Rider(){}
 
     public Rider(String name, String lastName, String idNumber) {

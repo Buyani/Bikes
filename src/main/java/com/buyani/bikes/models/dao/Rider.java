@@ -1,9 +1,8 @@
-package com.buyani.bikes.models;
+package com.buyani.bikes.models.dao;
 
 import jakarta.persistence.*;
 
 import java.util.LinkedHashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity

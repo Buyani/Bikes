@@ -1,8 +1,7 @@
-package com.buyani.bikes.models;
+package com.buyani.bikes.models.dao;
 
 import jakarta.persistence.*;
-
-import java.util.List;
+import org.antlr.v4.runtime.misc.NotNull;
 
 
 @Entity
@@ -16,8 +15,14 @@ public class Bike {
             generator = "bike_sequence")
 
     private Long id;
+    @NotNull
+    @Column(nullable = false)
     private String make ;
-    private String plateNumber ;
+    @NotNull
+    @Column(nullable = false)
+    private String plateNumber;
+    @NotNull
+    @Column(nullable = false)
     private int kilometers;
 
     @ManyToOne(fetch = FetchType.LAZY)

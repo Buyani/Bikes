@@ -1,7 +1,6 @@
 package com.buyani.bikes.services.implementations;
 
-import com.buyani.bikes.models.Rider;
-import com.buyani.bikes.repositories.ICashInRepository;
+import com.buyani.bikes.models.dao.Rider;
 import com.buyani.bikes.repositories.IRiderRepository;
 import com.buyani.bikes.services.interfaces.IRiderService;
 import org.springframework.stereotype.Service;

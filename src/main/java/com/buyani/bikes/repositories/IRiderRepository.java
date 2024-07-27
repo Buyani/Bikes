@@ -1,7 +1,6 @@
 package com.buyani.bikes.repositories;
 
-import com.buyani.bikes.models.CashIn;
-import com.buyani.bikes.models.Rider;
+import com.buyani.bikes.models.dao.Rider;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,5 +1,5 @@
 package com.buyani.bikes.controllers;
-import com.buyani.bikes.models.CashIn;
+import com.buyani.bikes.models.dao.CashIn;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

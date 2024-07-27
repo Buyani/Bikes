@@ -29,7 +29,7 @@ public class BikeController {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
        
-    };
+    }
     
     @PostMapping
     public ResponseEntity<BikeDTO> RegisterBike(@RequestBody BikeDTO bikeDto)
@@ -44,4 +44,23 @@ public class BikeController {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    @GetMapping("/{bikeId}")
+    public ResponseEntity<BikeDTO> GetBike(@PathVariable Long bikeId)
+    {
+        try {
+            var bike= _bikeService.getBike(bikeId);
+            
+            if(bike==null)
+            {
+                return new ResponseEntity<>(null, HttpStatus.NO_CONTENT);
+            }
+            return new ResponseEntity<>(bike, HttpStatus.OK);
+        }
+        catch(Exception ex)
+        {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
+    };
 }

@@ -1,6 +1,6 @@
 package com.buyani.bikes.services.implementations;
 
-import com.buyani.bikes.models.CashIn;
+import com.buyani.bikes.models.dao.CashIn;
 import com.buyani.bikes.repositories.ICashInRepository;
 import com.buyani.bikes.services.interfaces.ICashInService;
 import org.springframework.stereotype.Service;

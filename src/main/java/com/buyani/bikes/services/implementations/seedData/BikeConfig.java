@@ -1,6 +1,6 @@
 package com.buyani.bikes.services.implementations.seedData;
 
-import com.buyani.bikes.models.Bike;
+import com.buyani.bikes.models.dao.Bike;
 import com.buyani.bikes.repositories.IBikeRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;

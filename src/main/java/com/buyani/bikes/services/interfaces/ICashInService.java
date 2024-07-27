@@ -1,8 +1,6 @@
 package com.buyani.bikes.services.interfaces;
 
-import com.buyani.bikes.models.Bike;
-import com.buyani.bikes.models.CashIn;
-import org.springframework.data.jpa.repository.JpaRepository;
+import com.buyani.bikes.models.dao.CashIn;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.buyani.bikes.models;
+package com.buyani.bikes.models.dao;
 
 
 import jakarta.persistence.*;

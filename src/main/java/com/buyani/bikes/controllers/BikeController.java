@@ -1,7 +1,9 @@
 package com.buyani.bikes.controllers;
-import com.buyani.bikes.models.Bike;
-import com.buyani.bikes.models.Rider;
+import com.buyani.bikes.models.dao.Bike;
+import com.buyani.bikes.models.dto.BikeDTO;
 import com.buyani.bikes.services.interfaces.IBikeService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,8 +18,30 @@ public class BikeController {
         _bikeService=bikeService;
     }
     @GetMapping
-    public List<Bike> Bikes()
+    public ResponseEntity<List<BikeDTO>> Bikes()
     {
-        return _bikeService.allBikes();
+        try {
+            var bikes= _bikeService.allBikes();
+            return new ResponseEntity<>(bikes, HttpStatus.OK);
+        }
+        catch(Exception ex)
+        {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+       
     };
+    
+    @PostMapping
+    public ResponseEntity<BikeDTO> RegisterBike(@RequestBody BikeDTO bikeDto)
+    {
+        try{
+            var savedBike = _bikeService.registerBike(bikeDto);
+
+            return new ResponseEntity<>(bikeDto, HttpStatus.CREATED);
+        }
+        catch(Exception ex)
+        {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 }
